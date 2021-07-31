@@ -6,16 +6,18 @@ class NetworkInfoImpl implements NetworkInfo {
   final Connectivity connectionChecker;
   NetworkInfoImpl(this.connectionChecker);
 
-  bool isConnected = false;
+  bool _isConnected = false;
 
   @override
   Future<bool> checkConnection() async {
     var result = await connectionChecker.checkConnectivity();
     if (result == ConnectivityResult.none) {
-      return isConnected;
+      return _isConnected;
     } else {
-      isConnected = true;
-      return isConnected;
+      _isConnected = true;
+      return _isConnected;
     }
   }
+
+  bool get isConnected => _isConnected;
 }
