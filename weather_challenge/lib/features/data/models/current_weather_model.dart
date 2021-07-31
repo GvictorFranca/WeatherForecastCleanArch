@@ -69,4 +69,20 @@ class CurrentWeatherModel extends CurrentWeatherEntity {
         name: json["name"],
         cod: json["cod"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "coord": coord.toJson(),
+        "weather": List<dynamic>.from(weather.map((x) => x.toJson())),
+        "base": base,
+        "main": main.toJson(),
+        "visibility": visibility,
+        "wind": wind.toJson(),
+        "clouds": clouds.toJson(),
+        "dt": dt,
+        "sys": sys.toJson(),
+        "timezone": timezone,
+        "id": id,
+        "name": name,
+        "cod": cod,
+      };
 }

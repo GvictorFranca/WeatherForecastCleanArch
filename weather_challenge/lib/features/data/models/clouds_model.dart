@@ -12,4 +12,8 @@ class CloudsModel extends CloudsEntity {
   factory CloudsModel.fromJson(Map<String, dynamic> json) => CloudsModel(
         all: json["all"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "all": all,
+      };
 }

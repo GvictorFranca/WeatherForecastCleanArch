@@ -16,4 +16,9 @@ class WindModel extends WindEntity {
         speed: json["speed"].toDouble(),
         deg: json["deg"],
       );
+
+  Map<String, dynamic> toJson() => {
+        "speed": speed,
+        "deg": deg,
+      };
 }
