@@ -4,20 +4,17 @@ import 'network_info.dart';
 
 class NetworkInfoImpl implements NetworkInfo {
   final Connectivity connectionChecker;
-  NetworkInfoImpl(this.connectionChecker);
+  NetworkInfoImpl({required this.connectionChecker});
 
-  bool _isConnected = false;
+  bool isConnected = true;
 
   @override
   Future<bool> checkConnection() async {
     var result = await connectionChecker.checkConnectivity();
     if (result == ConnectivityResult.none) {
-      return _isConnected;
+      return isConnected = false;
     } else {
-      _isConnected = true;
-      return _isConnected;
+      return isConnected = true;
     }
   }
-
-  bool get isConnected => _isConnected;
 }
