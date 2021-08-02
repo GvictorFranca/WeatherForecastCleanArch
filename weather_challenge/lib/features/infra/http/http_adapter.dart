@@ -40,27 +40,19 @@ class HttpAdapter implements HttpClient {
           );
           break;
       }
-    } catch (error) {
-      throw ServerError();
+    } on DioError catch (e) {
+      switch (e.response?.statusCode) {
+        case 401:
+          throw UnauthorizedError();
+        case 403:
+          throw ForbiddenError();
+        case 404:
+          throw NotFoundError();
+        default:
+          throw ServerError();
+      }
     }
 
-    return _handleResponse(response);
-  }
-
-  dynamic _handleResponse(Response response) {
-    switch (response.statusCode) {
-      case 200:
-        return response.data;
-      case 204:
-        return null;
-      case 401:
-        throw UnauthorizedError();
-      case 403:
-        throw ForbiddenError();
-      case 404:
-        throw NotFoundError();
-      default:
-        throw ServerError();
-    }
+    return response.data;
   }
 }
