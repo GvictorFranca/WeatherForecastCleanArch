@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_challenge/core/shared/widgets/loading_widget.dart';
-import 'package:weather_challenge/core/shared/widgets/message_display.dart';
+
 import 'package:weather_challenge/features/presentation/bloc/forecast/forecast_bloc.dart';
 import 'package:weather_challenge/features/presentation/bloc/forecast/forecast_state.dart';
 import 'package:weather_challenge/features/presentation/widgets/forecast_display.dart';
+import 'package:weather_challenge/features/shared/widgets/loading_widget.dart';
+import 'package:weather_challenge/features/shared/widgets/message_display.dart';
 
 import '../../../injection_container.dart';
 

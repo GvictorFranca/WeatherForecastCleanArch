@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:weather_challenge/core/error/network/network_info_impl.dart';
-import 'package:weather_challenge/core/shared/constants/units_constants.dart';
+
 import 'package:weather_challenge/features/data/datasource/forecast/forecast_localdatasource.dart';
 import 'package:weather_challenge/features/data/mapper/exception/exception_mapper.dart';
 import 'package:weather_challenge/features/data/mapper/exception/exception_mapper_impl.dart';
@@ -14,8 +14,7 @@ import 'package:weather_challenge/features/infra/mapper/query_parameters/query_p
 import 'package:weather_challenge/features/infra/mapper/query_parameters/query_parameters_mapper_impl.dart';
 
 import 'core/error/network/network_info.dart';
-import 'core/shared/constants/crud_methods.dart';
-import 'core/shared/constants/url.dart';
+
 import 'core/utils/api_key.dart';
 import 'features/data/cache/cache_storage.dart';
 import 'features/data/datasource/forecast/forecast_remote_datasource.dart';
@@ -33,6 +32,9 @@ import 'features/infra/datasource/weather/weather_remote_datasource_impl.dart';
 import 'features/infra/http/http_adapter.dart';
 import 'features/presentation/bloc/forecast/forecast_bloc.dart';
 import 'features/presentation/bloc/weather/weather_bloc.dart';
+import 'features/shared/constants/crud_methods.dart';
+import 'features/shared/constants/units_constants.dart';
+import 'features/shared/constants/url.dart';
 
 final sl = GetIt.instance;
 
