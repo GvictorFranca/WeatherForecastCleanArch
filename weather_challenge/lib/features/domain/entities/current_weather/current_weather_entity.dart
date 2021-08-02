@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-import 'clouds_entity.dart';
-import 'coord_entity.dart';
+import '../common/clouds_entity.dart';
+import '../common/coord_entity.dart';
 import 'main_entity.dart';
 import 'sys_entity.dart';
-import 'weather_entity.dart';
+import '../common/weather_entity.dart';
 import 'wind_entity.dart';
 
 class CurrentWeatherEntity extends Equatable {
