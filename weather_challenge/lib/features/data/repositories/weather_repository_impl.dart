@@ -3,7 +3,7 @@ import 'package:weather_challenge/core/error/exceptions/cache_exception.dart';
 import 'package:weather_challenge/core/error/failures/cache_failure.dart';
 import 'package:weather_challenge/core/error/failures/failures.dart';
 
-import 'package:weather_challenge/core/error/network/network_info.dart';
+import 'package:weather_challenge/core/network/network_info.dart';
 import 'package:weather_challenge/features/data/datasource/weather/weather_local_datasource.dart';
 import 'package:weather_challenge/features/data/datasource/weather/weather_remote_datasource.dart';
 import 'package:weather_challenge/features/data/mapper/exception/exception_mapper.dart';
