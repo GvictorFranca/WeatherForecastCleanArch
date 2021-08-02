@@ -3,7 +3,7 @@ import 'package:weather_challenge/features/data/models/forecast/main_model.dart'
 import 'package:weather_challenge/features/data/models/forecast/sys_model.dart';
 import 'package:weather_challenge/features/data/models/forecast/wind_model.dart';
 import 'package:weather_challenge/features/data/models/common/weather_model.dart';
-import 'package:weather_challenge/features/domain/entities/forecast/list_element_entity.dart';
+import 'package:weather_challenge/features/domain/entities/forecast/element_entity.dart';
 
 class ElementModel extends ElementEntity {
   final int dt;

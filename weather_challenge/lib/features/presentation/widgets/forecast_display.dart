@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_challenge/features/domain/entities/forecast/forecast_entity.dart';
-import 'package:weather_challenge/features/domain/entities/forecast/list_element_entity.dart';
+import 'package:weather_challenge/features/domain/entities/forecast/element_entity.dart';
 import 'package:weather_challenge/features/presentation/mixins/check_day.dart';
 import 'package:weather_challenge/features/presentation/mixins/date_time_converter.dart';
 import 'package:weather_challenge/features/presentation/mixins/temp_converter.dart';

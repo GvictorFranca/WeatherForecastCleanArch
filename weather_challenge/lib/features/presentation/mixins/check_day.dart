@@ -1,6 +1,6 @@
 import 'package:weather_challenge/core/utils/forecast_compare_regex.dart';
 import 'package:weather_challenge/features/domain/entities/forecast/forecast_entity.dart';
-import 'package:weather_challenge/features/domain/entities/forecast/list_element_entity.dart';
+import 'package:weather_challenge/features/domain/entities/forecast/element_entity.dart';
 
 mixin CheckForecastByDay {
   List<ElementEntity> checkForecastByDay(ForecastEntity forecastEntity) {

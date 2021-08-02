@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:weather_challenge/features/domain/entities/forecast/city_entity.dart';
 
-import 'list_element_entity.dart';
+import 'element_entity.dart';
 
 class ForecastEntity extends Equatable {
   final String cod;
