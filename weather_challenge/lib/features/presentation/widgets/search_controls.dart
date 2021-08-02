@@ -54,8 +54,8 @@ class _SearchControlsState extends State<SearchControls> {
                       var formValid = _formKey.currentState?.validate() ?? true;
 
                       if (formValid) {
-                        _controller.clear();
                         _dispatchCurrentWeather(_controller.text);
+                        _controller.clear();
                       }
                     }),
               ),
@@ -74,7 +74,7 @@ class _SearchControlsState extends State<SearchControls> {
                       onPressed: () {
                         var formValid =
                             _formKey.currentState?.validate() ?? false;
-                        if (formValid)
+                        if (formValid) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -83,6 +83,7 @@ class _SearchControlsState extends State<SearchControls> {
                               ),
                             ),
                           );
+                        }
                       }),
                 ),
               ),
