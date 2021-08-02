@@ -56,5 +56,6 @@ class ElementModel extends ElementEntity {
         "wind": wind.toJson(),
         "visibility": visibility,
         "sys": sys.toJson(),
+        "dt_txt": dtTxt
       };
 }
