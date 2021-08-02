@@ -38,7 +38,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
     _GetCurrentWeather getCurrentWeather,
   ) async {
     if (await networkInfo.checkConnection()) {
-      print(await networkInfo.checkConnection());
       final responseResult = await getCurrentWeather();
       return responseResult.fold(
         (Exception left) {

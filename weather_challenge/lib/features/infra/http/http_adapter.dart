@@ -31,7 +31,6 @@ class HttpAdapter implements HttpClient {
     try {
       switch (method) {
         case 'get':
-          print(url);
           response = await client.get(
             url,
             queryParameters: queryParams,
@@ -42,10 +41,9 @@ class HttpAdapter implements HttpClient {
           break;
       }
     } catch (error) {
-      print(error.toString());
       throw ServerError();
     }
-    print(response.data);
+
     return _handleResponse(response);
   }
 
