@@ -30,65 +30,67 @@ class _SearchControlsState extends State<SearchControls> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        TextFormField(
-          key: _formKey,
-          controller: _controller,
-          cursorColor: Colors.black,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Input a city name',
-          ),
-          validator: Validatorless.required('Please provide a city name!'),
-        ),
-        SizedBox(height: 10),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: TextButton(
-                  child: Text('Search'),
-                  onPressed: () {
-                    var formValid = _formKey.currentState?.validate() ?? true;
-
-                    if (formValid) {
-                      _controller.clear();
-                      _dispatchCurrentWeather(_controller.text);
-                    }
-                  }),
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            controller: _controller,
+            cursorColor: Colors.black,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Input a city name',
             ),
-            SizedBox(width: 10),
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: BlocProvider(
-                create: (context) => ForecastBloc(
-                  getForecast: sl<GetForecast>(),
-                ),
+            validator: Validatorless.required('Please provide a city name!'),
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: <Widget>[
+              Expanded(
                 child: TextButton(
-                    child: Text('Forecast'),
+                    child: Text('Search'),
                     onPressed: () {
-                      var formValid =
-                          _formKey.currentState?.validate() ?? false;
-                      if (!formValid)
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ForecastPage(
-                              cityName: _controller.text,
-                            ),
-                          ),
-                        );
+                      var formValid = _formKey.currentState?.validate() ?? true;
+
+                      if (formValid) {
+                        _controller.clear();
+                        _dispatchCurrentWeather(_controller.text);
+                      }
                     }),
               ),
-            ),
-            SizedBox(width: 10),
-          ],
-        )
-      ],
+              SizedBox(width: 10),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: BlocProvider(
+                  create: (context) => ForecastBloc(
+                    getForecast: sl<GetForecast>(),
+                  ),
+                  child: TextButton(
+                      child: Text('Forecast'),
+                      onPressed: () {
+                        var formValid =
+                            _formKey.currentState?.validate() ?? false;
+                        if (formValid)
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ForecastPage(
+                                cityName: _controller.text,
+                              ),
+                            ),
+                          );
+                      }),
+                ),
+              ),
+              SizedBox(width: 10),
+            ],
+          )
+        ],
+      ),
     );
   }
 
